@@ -38,7 +38,7 @@ impl RawTransaction {
         tx.out()
     }
 
-    fn hash(&self, chain_id: u8) -> Vec<u8> {
+    pub fn hash(&self, chain_id: u8) -> Vec<u8> {
         let mut hash = RlpStream::new(); 
         hash.begin_unbounded_list();
         self.encode(&mut hash);
