@@ -49,7 +49,7 @@ impl RawTransaction {
         keccak256_hash(&hash.out())
     }
 
-    fn encode(&self, s: &mut RlpStream) {
+    pub fn encode(&self, s: &mut RlpStream) {
         s.append(&self.nonce);
         s.append(&self.gas_price);
         s.append(&self.gas);
